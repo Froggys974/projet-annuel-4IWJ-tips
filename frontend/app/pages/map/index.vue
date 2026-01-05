@@ -84,16 +84,14 @@ const onFilterChange = async () => {
 
         <!-- Filtre Pays -->
         <div class="relative">
-          <select
-v-model="filters.country"
+          <select v-model="filters.country"
             class="appearance-none pl-9 pr-8 py-2 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700"
             @change="onFilterChange">
             <option value="">🌍 Monde</option>
             <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
           </select>
           <Icon name="tabler:map-pin" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-          <Icon
-name="tabler:chevron-down"
+          <Icon name="tabler:chevron-down"
             class="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400 pointer-events-none" />
         </div>
 
@@ -103,13 +101,11 @@ name="tabler:chevron-down"
         <div
           class="flex items-center gap-2 bg-gray-50 dark:bg-slate-800 rounded-xl px-3 py-1 border border-gray-200 dark:border-slate-600 flex-wrap justify-center">
           <Icon name="tabler:calendar" class="w-4 h-4 text-gray-400" />
-          <input
-v-model="filters.dateStart" type="date"
+          <input v-model="filters.dateStart" type="date"
             class="bg-transparent text-sm text-gray-600 dark:text-gray-300 outline-none w-24" placeholder="Début"
             @change="onFilterChange">
           <span class="text-gray-300 dark:text-slate-600">→</span>
-          <input
-v-model="filters.dateEnd" type="date"
+          <input v-model="filters.dateEnd" type="date"
             class="bg-transparent text-sm text-gray-600 dark:text-gray-300 outline-none w-24" placeholder="Fin"
             @change="onFilterChange">
         </div>
@@ -126,8 +122,7 @@ v-model="filters.dateEnd" type="date"
     <!-- MAP CONTAINER -->
     <div class="flex-1 w-full h-full z-0 bg-gray-100 dark:bg-slate-950">
       <ClientOnly>
-        <LMap
-ref="mapRef" v-model:zoom="zoom" v-model:center="center" :use-global-leaflet="false"
+        <LMap ref="mapRef" v-model:zoom="zoom" v-model:center="center" :use-global-leaflet="false"
           :options="{ zoomControl: false }" class="h-full w-full z-0">
           <LTileLayer :url="tileUrl" layer-type="base" name="BaseMap" :attribution="attribution" />
 
@@ -135,8 +130,7 @@ ref="mapRef" v-model:zoom="zoom" v-model:center="center" :use-global-leaflet="fa
           <LControlZoom position="bottomright" />
 
           <LMarker v-for="tip in filteredTips" :key="tip.id" :lat-lng="[tip.lat, tip.lng]">
-            <LIcon
-icon-url="/pin.svg" :icon-size="[40, 40]" :icon-anchor="[20, 40]" :popup-anchor="[0, -40]"
+            <LIcon icon-url="/pin.svg" :icon-size="[40, 40]" :icon-anchor="[20, 40]" :popup-anchor="[0, -40]"
               class-name="drop-shadow-md transition-transform duration-200" />
             <LPopup :options="{ closeButton: false, offset: [0, -10] }">
               <div class="w-48 p-1 font-sans text-slate-800 dark:text-slate-900">
@@ -146,8 +140,7 @@ icon-url="/pin.svg" :icon-size="[40, 40]" :icon-anchor="[20, 40]" :popup-anchor=
                 <div class="flex items-center gap-1 text-xs text-gray-500 mb-3">
                   <Icon name="tabler:calendar" class="w-3 h-3" /> {{ tip.date }}
                 </div>
-                <NuxtLink
-:to="`/tips/${tip.id}`"
+                <NuxtLink :to="`/tips/${tip.id}`"
                   class="block w-full text-center py-1.5 rounded-lg bg-slate-900 text-white text-xs font-medium hover:bg-purple-600 transition-colors">
                   Voir le détail</NuxtLink>
               </div>

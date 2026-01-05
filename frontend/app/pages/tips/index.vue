@@ -45,12 +45,10 @@ const resetFilters = () => {
       <!-- Barre de recherche intelligente -->
       <div class="relative w-full md:w-96 group">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Icon
-name="tabler:search"
+          <Icon name="tabler:search"
             class="h-5 w-5 text-gray-400 group-focus-within:text-purple-500 transition-colors" />
         </div>
-        <input
-v-model="searchQuery" type="text" placeholder="Rechercher (ex: React, Docker...)"
+        <input v-model="searchQuery" type="text" placeholder="Rechercher (ex: React, Docker...)"
           class="block w-full pl-10 pr-3 py-3 border-none rounded-xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-md shadow-lg ring-1 ring-black/5 dark:ring-white/10 focus:ring-2 focus:ring-purple-500 transition-all placeholder-gray-400 text-slate-800 dark:text-white">
       </div>
     </div>
@@ -64,8 +62,7 @@ v-model="searchQuery" type="text" placeholder="Rechercher (ex: React, Docker...)
 
       <!-- Tags -->
       <div class="flex flex-wrap gap-2">
-        <button
-v-for="tag in availableTags" :key="tag"
+        <button v-for="tag in availableTags" :key="tag"
           class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all border"
           :class="selectedTag === tag
             ? 'bg-purple-500 border-purple-500 text-white shadow-lg shadow-purple-500/20'
@@ -79,8 +76,7 @@ v-for="tag in availableTags" :key="tag"
 
       <!-- Difficulté -->
       <div class="flex items-center gap-1">
-        <button
-v-for="i in 5" :key="i"
+        <button v-for="i in 5" :key="i"
           class="w-8 h-8 rounded-lg flex items-center justify-center transition-all border"
           :class="selectedDifficulty === i
             ? 'bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-500/20'
@@ -91,8 +87,7 @@ v-for="i in 5" :key="i"
       </div>
 
       <!-- Reset -->
-      <button
-v-if="searchQuery || selectedTag || selectedDifficulty"
+      <button v-if="searchQuery || selectedTag || selectedDifficulty"
         class="ml-auto text-xs font-bold text-red-500 hover:text-red-600 flex items-center gap-1" @click="resetFilters">
         <Icon name="tabler:x" /> Effacer
       </button>

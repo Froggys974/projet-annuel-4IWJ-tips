@@ -80,8 +80,7 @@ const xpPercent = computed(() => {
             <Icon :name="user.roleIcon" class="w-4 h-4" />
             <span>{{ user.roleLabel }}</span>
           </div>
-          <button
-type="button"
+          <button type="button"
             class="inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 bg-white/80 dark:bg-slate-800 p-2 text-gray-500 dark:text-gray-400 hover:text-purple-600 hover:border-purple-300 transition"
             aria-label="Éditer le profil">
             <Icon name="tabler:pencil" class="w-4 h-4" />
@@ -164,8 +163,7 @@ type="button"
           </h3>
           <ul class="space-y-1.5">
             <li v-for="step in xpSteps" :key="step.label" class="flex items-center gap-2">
-              <span
-class="h-2 w-2 rounded-full"
+              <span class="h-2 w-2 rounded-full"
                 :class="step.label === user.levelLabel ? 'bg-emerald-500' : 'bg-purple-300'" />
               <span class="font-medium text-slate-800 dark:text-slate-100">
                 {{ step.label }}

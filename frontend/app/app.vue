@@ -34,12 +34,10 @@ useSiteMeta()
       </AppHeader>
 
       <!-- BARRE DE RECHERCHE MOBILE -->
-      <Transition
-enter-active-class="transition duration-200 ease-out" enter-from-class="-translate-y-2 opacity-0"
+      <Transition enter-active-class="transition duration-200 ease-out" enter-from-class="-translate-y-2 opacity-0"
         enter-to-class="translate-y-0 opacity-100" leave-active-class="transition duration-150 ease-in"
         leave-from-class="translate-y-0 opacity-100" leave-to-class="-translate-y-2 opacity-0">
-        <div
-v-if="showSearch"
+        <div v-if="showSearch"
           class="absolute left-0 right-0 w-full bg-white dark:bg-slate-800 border-b border-purple-100 dark:border-slate-700 shadow-lg py-3 px-4 md:hidden z-50">
           <div class="max-w-lg mx-auto relative">
             <SearchInput ref="inputRef" placeholder="Rechercher un tips..." @blur="showSearch = false" />
@@ -74,8 +72,7 @@ v-if="showSearch"
     </div>
 
     <!-- Overlay sombre si recherche active (Mobile) -->
-    <div
-v-if="showSearch" class="fixed inset-0 bg-black/20 backdrop-blur-xs z-30 md:hidden"
+    <div v-if="showSearch" class="fixed inset-0 bg-black/20 backdrop-blur-xs z-30 md:hidden"
       @click="showSearch = false" />
   </div>
 </template>

@@ -66,8 +66,7 @@ useSeoMeta({
 
     <!-- Filtres -->
     <ClientOnly>
-      <RankingFilters
-:time-filter="timeFilter" :category-filter="categoryFilter"
+      <RankingFilters :time-filter="timeFilter" :category-filter="categoryFilter"
         @update:time-filter="timeFilter = $event" @update:category-filter="categoryFilter = $event" />
     </ClientOnly>
 

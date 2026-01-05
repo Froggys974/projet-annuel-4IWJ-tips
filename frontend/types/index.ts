@@ -4,6 +4,17 @@ export interface Grade {
   xp_required: number
 }
 
+export interface LoginCredentials {
+  email: string
+  password: string
+}
+
+export interface RegisterDTO {
+  username: string
+  email: string
+  password: string
+}
+
 export interface DbUser {
   id: number
   user_name: string

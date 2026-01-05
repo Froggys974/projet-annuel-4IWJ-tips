@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import type { RegisterDTO } from '@@/types'
+
 const { register } = useAuth()
 const isLoading = ref(false)
 
-const form = reactive({
+const form = ref<RegisterDTO>({
   username: '',
   email: '',
   password: ''
@@ -11,7 +13,7 @@ const form = reactive({
 const handleRegister = async () => {
   if (isLoading.value) return
   isLoading.value = true
-  await register(form.username, form.email, form.password)
+  await register(form.value)
   isLoading.value = false
 }
 </script>
