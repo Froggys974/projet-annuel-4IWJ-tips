@@ -1,44 +1,43 @@
-# Dépendances
 node_modules/
 npm-debug.log
 yarn-error.log
 
-# Build
 dist/
 *.tsbuildinfo
 
-# Base de données locale
 prisma/dev.db
 prisma/*.db
 prisma/*.db-journal
 
-# Environnement
 .env
 .env.local
-.env.test
-.env.docker.test
 .env.*.local
-.env.docker
 
-# Logs
 logs/
 *.log
 .cache
 .tmp
 
-# Coverage
 coverage/
-.nyc_output/
 
-# IDE
 .vscode/
 .idea/
-*.swp
-*.swo
 .DS_Store
 Thumbs.db
 
-# OS
-Thumbs.db
+__tests__/
+test/
+tests/
+*.spec.ts
+*.test.ts
+jest.config.*
+vitest.config.*
 
-generated
+.git/
+.gitignore
+
+*.md
+!README.md
+
+Dockerfile*
+docker-compose*.yml
